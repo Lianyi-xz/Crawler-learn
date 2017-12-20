@@ -1,6 +1,8 @@
+#下载图片
+#URL 文件之间使用"//"符号 非"\"符号
+
 import requests
 import os
-
 url = "http://pic4.nipic.com/20091217/3885730_124701000519_2.jpg"
 root = "C://Users//user//Desktop//"
 path = root + url.split('/')[-1]

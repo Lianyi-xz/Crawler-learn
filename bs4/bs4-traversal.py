@@ -1,3 +1,17 @@
+#bs4 遍历方法
+# 上行遍历
+#     .parent           父节点标签
+#     .parents          节点先辈标签的迭代类型
+# 下行遍历
+#     .contents         子节点列表
+#     .children         子节点的迭代类型
+#     .deseendants      子孙节点的迭代类型
+# 平行遍历(同一个父节点)
+#     .next_sibling       下一个平行节点
+#     .previous_sibling   上一个平行节点
+#     .next_siblings      所有后续平行节点
+#     .previous_siblings  所有前续平行节点
+
 import requests
 from bs4 import BeautifulSoup
 url="http://python123.io/ws/demo.html"

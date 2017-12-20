@@ -1,3 +1,4 @@
+#爬取亚马逊商品内容
 import requests
 def getHtml(url):
     try:

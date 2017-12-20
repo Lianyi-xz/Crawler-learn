@@ -1,3 +1,4 @@
+#bs4 基本元素
 import requests
 from bs4 import BeautifulSoup
 url="http://python123.io/ws/demo.html"
