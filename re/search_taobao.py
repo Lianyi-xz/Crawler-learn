@@ -1,5 +1,5 @@
+#淘宝商品爬虫
 import requests
-from bs4 import BeautifulSoup
 import re
 #获取淘宝页面
 def getHTMLText(url):
@@ -9,15 +9,28 @@ def getHTMLText(url):
         r.encoding = r.apparent_encoding
         return r.text
     except:
-        print("")
+        return ""
 
 #对淘宝页面进行分析
 def parsePage(ilt,html):
-    pass
+    try:
+        plt = re.findall(r'\"view_price\"\:\"[\d\.]*\"',html)
+        tlt = re.findall(r'\"raw_title\"\:\".*?\"',html)
+        for i in range(len(plt)):
+            price = eval(plt[i].split(':')[1])
+            title = eval(tlt[i].split(':')[1])
+            ilt.append([price,title])
+    except:
+        return ""
 
 #输出商品信息
-def printGoodsList(list):
-    pass
+def printGoodsList(ilt):
+    tplt = "{:4}\t{:8}\t{:16}"
+    print(tplt.format("序号","价格","商品名称"))
+    count = 0
+    for g in  ilt:
+        count = count + 1
+        print(tplt.format(count,g[0],g[1]))
 
 if __name__ == '__main__':
     goods = "书包"
@@ -31,3 +44,4 @@ if __name__ == '__main__':
             parsePage(infoList,html)
         except:
             print("")
+    printGoodsList(infoList)
