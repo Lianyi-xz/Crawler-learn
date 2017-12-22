@@ -5,3 +5,6 @@
 网页分析
 * BeatifulSoup库
 * re 
+
+Excel
+* XlsxWriter库
