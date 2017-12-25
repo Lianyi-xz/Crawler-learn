@@ -4,6 +4,7 @@ import re
 import time
 import requests
 import xlsxwriter
+import numpy as np
 from bs4 import BeautifulSoup
 
 #获取8小时内段子总页数
@@ -99,11 +100,12 @@ if __name__ == '__main__':
     output_txt = 'C:/Users/user/Desktop/qiubai.txt'
     output_xls = 'C:/Users/user/Desktop/qiubai.xlsx'
     for i in range(int(page)):
-       try:
+        time.sleep(np.random.rand()*5)
+        try:
            hr_url="https://www.qiushibaike.com/8hr/page/" + str(i+1)+"/"
            html = getHtml(hr_url)
            parserHtml(ilt,html)
-       except:
+        except:
            print("")
     printData(ilt)
     #saveTxtData(ilt,output_txt)

@@ -1,4 +1,7 @@
 # 爬虫学习
+爬虫框架
+* Scrapy
+
 页面抓取
  * request库 
 
@@ -6,5 +9,8 @@
 * BeatifulSoup库
 * re 
 
-Excel
+
+其他
 * XlsxWriter库
+* NumPy库
+* pywin32
