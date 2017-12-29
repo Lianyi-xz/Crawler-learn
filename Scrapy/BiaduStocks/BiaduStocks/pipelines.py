@@ -11,9 +11,10 @@ class BiadustocksPipeline(object):
         return item
 
 class BiadustocksInfoPipeline(object):
+    #管道执行前执行方法
     def open_spider(self,spider):
         self.f = open('BaiduStockInfo.txt','w')
-
+    #管道执行后执行方法
     def close_spider(self,spider):
         self.f.close()
 
